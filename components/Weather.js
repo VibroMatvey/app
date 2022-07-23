@@ -52,6 +52,11 @@ const WeatherOptions = {
     },
 }
 
+Weather.propTypes = {
+    temp: propTypes.number.isRequired,
+    condition: propTypes.oneOf(["Thunderstorm", "Drizzle", "Rain", "Snow", "Dust", "Smoke", "Haze", "Mist", "Clear", "Clouds"]).isRequired
+}
+
 export default function Weather ({temp, condition}) {
     return (
             <LinearGradient
@@ -72,11 +77,6 @@ export default function Weather ({temp, condition}) {
                 </View>
             </LinearGradient>
     )
-}
-
-Weather.propTypes = {
-    temp: propTypes.number.isRequired,
-    condition: propTypes.oneOf(["Thunderstorm", "Drizzle", "Rain", "Snow", "Dust", "Smoke", "Haze", "Mist", "Clear", "Clouds"]).isRequired
 }
 
 const styles = StyleSheet.create({
